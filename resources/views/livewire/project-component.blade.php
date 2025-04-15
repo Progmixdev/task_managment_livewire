@@ -13,12 +13,20 @@
                     </li>
                 @endforeach
             </ul>
+        @else
+            <p class="section-desc">No projects available.</p>
         @endif
     </aside>
 
-    @if ($selectedProjectId)
-        <div class="sidebarContent {{ $sidebarOpen ? 'open' : 'close' }}">
+    <div class="sidebarContent {{ $sidebarOpen ? 'open' : 'close' }}">
+        @if ($selectedProjectId)
             <livewire:task-component :projectId="$selectedProjectId" wire:key="project-{{ $selectedProjectId }}" />
-        </div>
-    @endif
+        @else
+            <div class="section">
+                <h2 class="section-title">No project selected. Please choose a project from the sidebar.</h2>
+            </div>
+        @endif
+    </div>
+
+
 </div>

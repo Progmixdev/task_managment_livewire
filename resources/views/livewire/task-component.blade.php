@@ -10,22 +10,29 @@
 
     <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
 
-    <ul class="tasks">
-        @foreach ($tasks as $task)
-            <li>
-                <button wire:click="toggleTaskStatus({{ $task->id }})" class="task-button">
-                    <div class="task {{ $task->is_done ? 'done' : 'pending' }}" id="task-{{ $task->id }}">
-                        <h3>{{ $task->title }}</h3>
-                        <div>
-                            <span class="status-text">
-                                {{ $task->is_done ? '✓ Done' : '⏳ Pending' }}
-                            </span>
+    @if ($tasks)
+        <ul class="tasks">
+            @foreach ($tasks as $task)
+                <li>
+                    <button wire:click="toggleTaskStatus({{ $task->id }})" class="task-button">
+                        <div class="task {{ $task->is_done ? 'done' : 'pending' }}" id="task-{{ $task->id }}">
+                            <h3>{{ $task->title }}</h3>
+                            <div>
+                                <span class="status-text">
+                                    {{ $task->is_done ? '✓ Done' : '⏳ Pending' }}
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </button>
-            </li>
-        @endforeach
-    </ul>
+                    </button>
+                </li>
+            @endforeach
+        </ul>
+    @else
+        <div class="section">
+            <h2 class="section-title">No Tasks for project selected.</h2>
+        </div>
+    @endif
+
 
     @if ($isOpen)
         <div class="modal">
