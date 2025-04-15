@@ -2,7 +2,14 @@
     <div class="section-btn">
         <button wire:click="create" class="btn">Add Task</button>
     </div>
-    <h2>Tasks for Project ID: {{ $projectId }}</h2>
+    @if (session('message'))
+        <div class="alert success">
+            {{ session('message') }}
+        </div>
+    @endif
+
+    <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
+
     <ul class="tasks">
         @foreach ($tasks as $task)
             <li>
@@ -31,17 +38,17 @@
 
                     <div class="form-group">
                         <label for="title">Task Title</label>
-                        <input id="title" type="text" wire:model="title">
+                        <input id="title" type="text" wire:model="title" class="form-control">
                         @error('title')
-                            <div>{{ $message }}</div>
+                            <div class="alert error">{{ $message }}</div>
                         @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="due_date">Due Date</label>
-                        <input id="due_date" type="date" wire:model="due_date">
+                        <input id="due_date" type="date" wire:model="due_date" class="form-control">
                         @error('due_date')
-                            <div>{{ $message }}</div>
+                            <div class="alert error">{{ $message }}</div>
                         @enderror
                     </div>
 

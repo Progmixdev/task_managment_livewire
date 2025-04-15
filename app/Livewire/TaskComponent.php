@@ -35,7 +35,7 @@ class TaskComponent extends Component
             'due_date' => $this->due_date,
             'project_id' => $this->projectId,
         ]);
-        session()->flash('success', 'Task created successfully.');
+        session()->flash('message', 'Task created successfully.');
 
         $this->reset('title', 'due_date');
         $this->closeModal();

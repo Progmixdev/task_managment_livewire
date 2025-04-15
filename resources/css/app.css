@@ -122,14 +122,44 @@ aside li:hover {
     background-color: rgba(255, 255, 0, 0.5);
 }
 
-.form-group {
-    margin-bottom: 20px;
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
-input {
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+}
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #495057;
+}
+
+.form-control {
+    display: block;
     width: 100%;
-    border-radius: 20px;
-    border: solid 1px;
-    padding: 12px;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, shadow-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
 }
 .modal {
     position: fixed;
@@ -146,6 +176,7 @@ input {
     position: absolute;
     top: 10px;
     right: 10px;
+    cursor: pointer;
 }
 
 .modalContent {
@@ -154,4 +185,22 @@ input {
     border-radius: 5px;
     width: 400px;
     position: relative;
+}
+
+.alert {
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-left: 5px solid;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.alert.success {
+    background-color: #d1f2c4;
+    color: #3c763d;
+    border-color: #53a354;
+}
+
+.alert.error {
+    background-color: #f0cccc;
+    color: #a94442;
+    border-color: #db5552;
 }
