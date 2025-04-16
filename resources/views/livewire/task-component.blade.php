@@ -1,5 +1,5 @@
 <div class="section">
-    <div class="section-btn">
+    <div class="section-header">
         <button wire:click="create" class="btn">Add Task</button>
     </div>
     @if (session('message'))
@@ -35,8 +35,8 @@
     @if ($isOpen)
         <div class="modal">
             <div class="modalContent">
-                <button wire:click="closeModal" class="modalClose">X</button>
-                <h2>Create Task</h2>
+                <button wire:click="closeModal" class="modalClose">&#10005;</button>
+                <h2 class="section-title">Create Task</h2>
 
                 <form wire:submit.prevent="store">
                     <input type="hidden" wire:model="projectId">
@@ -57,7 +57,7 @@
                         @enderror
                     </div>
 
-                    <div class="section-btn">
+                    <div class="section-footer">
                         <button type="submit" class="btn">Save Task</button>
                     </div>
                 </form>

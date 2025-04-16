@@ -53,9 +53,7 @@ aside li:hover {
     right: 20px;
     cursor: pointer;
 }
-.btn {
-    cursor: pointer;
-}
+
 .projects li.selected {
     background-color: #575757;
     color: white;
@@ -85,16 +83,17 @@ aside li:hover {
 .section-footer {
     margin-top: 20px;
 }
-.section-btn {
-    margin-top: 20px;
+.section-header {
+    margin-bottom: 20px;
 }
-.section-btn .btn {
+.btn {
     background-color: #818181;
     color: white;
     padding: 10px;
     border-radius: 15px;
+    cursor: pointer;
 }
-.section-btn .btn:hover {
+.btn:hover {
     border: solid 1px #818181;
     color: #818181;
     background-color: white;
@@ -121,10 +120,12 @@ aside li:hover {
 }
 .task.done {
     background-color: rgba(0, 128, 0, 0.5);
+    color: rgb(0, 128, 0);
 }
 
 .task.pending {
     background-color: rgba(255, 255, 0, 0.5);
+    color: rgb(255, 255, 0);
 }
 
 
@@ -188,24 +189,21 @@ label {
     background: white;
     padding: 20px;
     border-radius: 5px;
-    width: 400px;
+    width: 500px;
     position: relative;
 }
 
 .alert {
     margin: 5px 0;
     padding: 10px 15px;
-    border-left: 5px solid;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .alert.success {
     background-color: #d1f2c4;
     color: #3c763d;
-    border-color: #53a354;
 }
 
 .alert.error {
     background-color: #f0cccc;
     color: #a94442;
-    border-color: #db5552;
 }
