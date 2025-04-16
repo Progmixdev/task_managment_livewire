@@ -36,8 +36,7 @@ class TaskComponent extends Component
             'project_id' => $this->projectId,
         ]);
         session()->flash('message', 'Task created successfully.');
-
-        $this->reset('title', 'due_date');
+        // $this->resetPage();
         $this->closeModal();
     }
     public function openModal()
@@ -54,8 +53,6 @@ class TaskComponent extends Component
         $task = Task::findOrFail($taskId);
         $task->is_done = !$task->is_done;
         $task->save();
-        session()->flash('message', 'Task status updated successfully.');
-        $this->resetPage();
     }
 
     public function render()

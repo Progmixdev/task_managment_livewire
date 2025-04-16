@@ -10,7 +10,7 @@ class ProjectComponent extends Component
     public $projects;
     public $selectedProjectId;
     public $tasks;
-    public $sidebarOpen = false;
+    public $sidebarOpen = true;
 
     public function mount()
     {
@@ -21,7 +21,6 @@ class ProjectComponent extends Component
     {
         $this->selectedProjectId = $projectId;
         $this->tasks = Project::find($projectId)?->tasks ?? [];
-        $this->sidebarOpen = false; // Auto close after selection (optional)
     }
 
     public function toggleSidebar()
