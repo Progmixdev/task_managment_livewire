@@ -8,9 +8,9 @@
         </div>
     @endif
 
-    <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
 
-    @if ($tasks)
+    @if (count($tasks))
+    <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
         <ul class="tasks">
             @foreach ($tasks as $task)
                 <li>
@@ -28,9 +28,7 @@
             @endforeach
         </ul>
     @else
-        <div class="section">
-            <h2 class="section-title">No Tasks for project selected.</h2>
-        </div>
+            <h2 class="section-title">No Tasks for Project ID: {{ $projectId }}</h2>
     @endif
 
 
