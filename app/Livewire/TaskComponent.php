@@ -36,7 +36,6 @@ class TaskComponent extends Component
             'project_id' => $this->projectId,
         ]);
         session()->flash('message', 'Task created successfully.');
-        // $this->resetPage();
         $this->closeModal();
     }
     public function openModal()
