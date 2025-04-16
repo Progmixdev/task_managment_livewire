@@ -58,10 +58,10 @@ aside li:hover {
     background-color: #575757;
     color: white;
 }
-.mySidebar.open{
+.mySidebar.open {
     left: 0;
 }
-.mySidebar.close{
+.mySidebar.close {
     left: -300px;
 }
 .sidebarContent.open {
@@ -79,7 +79,7 @@ aside li:hover {
     color: #818181;
     font-size: 30px;
 }
-.section-content{
+.section-content {
     margin-top: 10px;
 }
 .section-footer {
@@ -104,7 +104,6 @@ aside li:hover {
 .tasks {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 .task-button {
     display: block;
@@ -113,8 +112,8 @@ aside li:hover {
 }
 .task {
     color: #111;
-    border-radius: 15px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
 }
 .task:hover {
     opacity: 0.8;
@@ -124,12 +123,19 @@ aside li:hover {
     background-color: #dff0d8;
     color: #3c763d;
 }
-
+.task.done label {
+    text-decoration: line-through;
+}
+.task label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 .task.pending {
     background-color: #fcf8e3;
     color: #8a6d3b;
 }
-
 
 label {
     display: block;

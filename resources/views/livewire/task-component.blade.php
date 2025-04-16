@@ -8,27 +8,24 @@
         </div>
     @endif
 
-
     @if (count($tasks))
-    <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
+        <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
+
         <ul class="section-content tasks">
             @foreach ($tasks as $task)
                 <li>
-                    <button wire:click="toggleTaskStatus({{ $task->id }})" class="task-button">
-                        <div class="task {{ $task->is_done ? 'done' : 'pending' }}" id="task-{{ $task->id }}">
-                            <h3>{{ $task->title }}</h3>
-                            <div>
-                                <span class="status-text">
-                                    {{ $task->is_done ? '✓ Done' : '⏳ Pending' }}
-                                </span>
-                            </div>
-                        </div>
-                    </button>
+                    <div class="form-group task {{ $task->is_done ? 'done' : 'pending' }}">
+                        <label for="task-{{ $task->id }}">
+                            <input
+                                type="checkbox" {{ $task->is_done ? 'checked' : '' }} class="task-checkbox"
+                                id="task-{{ $task->id }}" wire:click="toggleTaskStatus({{ $task->id }})"/>
+                            {{ $task->title }}</label>
+                    </div>
                 </li>
             @endforeach
         </ul>
     @else
-            <h2 class="section-title">No Tasks for Project ID: {{ $projectId }}</h2>
+        <h2 class="section-title">No Tasks for Project ID: {{ $projectId }}</h2>
     @endif
 
 
