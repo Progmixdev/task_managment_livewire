@@ -60,7 +60,12 @@ aside li:hover {
     background-color: #575757;
     color: white;
 }
-
+.mySidebar.open{
+    left: 0;
+}
+.mySidebar.close{
+    left: -300px;
+}
 .sidebarContent.open {
     margin-left: 300px;
 }

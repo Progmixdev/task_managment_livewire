@@ -1,6 +1,6 @@
 <div class="section">
     <span class="sidebar-button" wire:click="toggleSidebar">&#9776;</span>
-    <aside class="mySidebar" style="{{ $sidebarOpen ? 'left: 0;' : 'left: -300px;' }}">
+    <aside class="mySidebar {{ $sidebarOpen ? 'open' : 'close' }}">
         <span class="close-btn" wire:click="toggleSidebar">&#10005;</span>
         <h2 class="section-title">All Projects</h2>
 
