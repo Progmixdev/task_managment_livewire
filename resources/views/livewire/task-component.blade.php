@@ -11,7 +11,7 @@
 
     @if (count($tasks))
     <h2 class="section-title">Tasks for Project ID: {{ $projectId }}</h2>
-        <ul class="tasks">
+        <ul class="section-content tasks">
             @foreach ($tasks as $task)
                 <li>
                     <button wire:click="toggleTaskStatus({{ $task->id }})" class="task-button">
@@ -38,7 +38,7 @@
                 <button wire:click="closeModal" class="modalClose">&#10005;</button>
                 <h2 class="section-title">Create Task</h2>
 
-                <form wire:submit.prevent="store">
+                <form wire:submit.prevent="store" class="section-content">
                     <input type="hidden" wire:model="projectId">
 
                     <div class="form-group">

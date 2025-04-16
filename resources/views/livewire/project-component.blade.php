@@ -5,7 +5,7 @@
         <h2 class="section-title">All Projects</h2>
 
         @if ($projects)
-            <ul class="projects">
+            <ul class="section-content projects">
                 @foreach ($projects as $project)
                     <li wire:click='selectProject({{ $project->id }})'
                         class="{{ $selectedProjectId == $project->id ? 'selected' : '' }}">

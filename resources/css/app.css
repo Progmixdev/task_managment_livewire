@@ -76,9 +76,11 @@ aside li:hover {
     padding: 40px;
 }
 .section-title {
-    margin-bottom: 30px;
     color: #818181;
     font-size: 30px;
+}
+.section-content{
+    margin-top: 10px;
 }
 .section-footer {
     margin-top: 20px;
